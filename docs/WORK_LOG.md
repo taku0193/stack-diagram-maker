@@ -23,3 +23,10 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - `npm test`: 終了コード1。スターターにテストファイルがなく、`No test files found` と表示された。
 - `npm audit --json`: 依存パッケージ3件に既知の脆弱性（moderate 1件、critical 2件）を検出。対象はVitest、`@vitest/mocker`、`tinypool`。auditが提示する修正はVitest 5.1.0へのメジャー更新で、今回は提供されたスターターのバージョン指定を維持した。
 - 未完事項: 依存パッケージの脆弱性対応、Skill導入、構成図生成、MVP機能とテストの実装。今回はリポジトリ作成とスターターの保存まで実施した。
+
+## 2026-11-10 — MVP実装の準備
+
+- ユーザーからMVP実装の開始指示を受け、AGENTS/仕様/テスト計画を再確認した。
+- 公式README、SKILL.mdと同梱スクリプトを確認し、公式コミット `5af3b095fff7109c905c5284dc510dc06588bade` のSkillを `.agents/skills/stack-diagram/` へ導入した。取得元とライセンスを `docs/SKILL_PROVENANCE.md` に記録した。
+- `npm install --save-dev vitest@^5.1.0 jsdom@latest` を実行し、Vitest 5.1.0へ更新、DOMテスト用jsdomを導入。インストール時のauditは脆弱性0件。
+- Skillの `fetch_icons.py` でVue/FastAPI/PostgreSQLのロゴ取得を開始。公式テンプレートとgeometry.mdに沿ってHTMLを生成する。

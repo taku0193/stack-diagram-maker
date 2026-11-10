@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+  <title id="title">Stack Diagram Maker</title>
+  <desc id="desc">Architecture, at a glance. Generate with Codex. Browse locally.</desc>
+  <defs>
+    <linearGradient id="background" x2="1" y2="1">
+      <stop stop-color="#10211a"/>
+      <stop offset="1" stop-color="#1b3025"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#97c18b" stroke-opacity=".065"/>
+    </pattern>
+    <pattern id="paper" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r=".8" fill="#b4c3a9"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="m0 0 8 4-8 4Z" fill="#668f50"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="360" rx="20" fill="url(#background)"/>
+  <rect width="1280" height="360" rx="20" fill="url(#grid)"/>
+  <g fill="none" stroke="#c7ed8a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="m70 46 14 8-14 8-14-8 14-8Z"/>
+    <path d="m56 61 14 8 14-8M56 68l14 8 14-8"/>
+  </g>
+  <text x="101" y="66" fill="#c7ed8a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2.4">STACK DIAGRAM MAKER</text>
+  <g fill="#f4f8ef" font-family="Arial, Helvetica, sans-serif" font-size="53" font-weight="700" letter-spacing="-1.8">
+    <text x="52" y="146">Your architecture.</text>
+    <text x="52" y="207">In one place.</text>
+  </g>
+  <text x="54" y="252" fill="#a9bbaa" font-family="Arial, Helvetica, sans-serif" font-size="16">Generate with Codex. Browse locally.</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" letter-spacing="1.1">
+    <rect x="52" y="291" width="66" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
+    <text x="68" y="307" fill="#c6d7ba">VITE</text>
+    <rect x="127" y="291" width="112" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
+    <text x="141" y="307" fill="#c6d7ba">TYPESCRIPT</text>
+    <rect x="248" y="291" width="80" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
+    <text x="262" y="307" fill="#c6d7ba">VITEST</text>
+    <rect x="337" y="291" width="193" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
+    <text x="352" y="307" fill="#c6d7ba">SELF-CONTAINED HTML</text>
+  </g>
+  <g transform="translate(650 48)">
+    <rect width="578" height="264" rx="16" fill="#1b3025" stroke="#446044"/>
+    <path d="M0 39H578" stroke="#38513a"/>
+    <g fill="#78976a"><circle cx="20" cy="20" r="3"/><circle cx="32" cy="20" r="3"/><circle cx="44" cy="20" r="3"/></g>
+    <text x="68" y="24" fill="#9eb494" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.8">LOCAL LIBRARY</text>
+    <rect x="16" y="55" width="142" height="193" rx="9" fill="#14251b"/>
+    <rect x="27" y="68" width="120" height="53" rx="7" fill="#304d2b" stroke="#799c5e"/>
+    <rect x="39" y="80" width="20" height="20" rx="5" fill="#c7ed8a"/>
+    <path d="m43 87 6-3 6 3-6 3-6-3Zm0 4 6 3 6-3" fill="none" stroke="#3e592f" stroke-width="1.1"/>
+    <rect x="69" y="83" width="63" height="4" rx="2" fill="#d7e8c6"/>
+    <rect x="69" y="94" width="42" height="3" rx="1.5" fill="#8ba479"/>
+    <rect x="27" y="131" width="120" height="46" rx="7" fill="#21362a"/>
+    <rect x="39" y="143" width="18" height="18" rx="4" fill="#3c5940"/>
+    <rect x="69" y="144" width="58" height="4" rx="2" fill="#7b9572"/>
+    <rect x="69" y="155" width="38" height="3" rx="1.5" fill="#526e4e"/>
+    <rect x="27" y="187" width="120" height="46" rx="7" fill="#21362a"/>
+    <rect x="39" y="199" width="18" height="18" rx="4" fill="#3c5940"/>
+    <rect x="69" y="200" width="52" height="4" rx="2" fill="#7b9572"/>
+    <rect x="69" y="211" width="41" height="3" rx="1.5" fill="#526e4e"/>
+    <rect x="172" y="55" width="390" height="193" rx="9" fill="#edf3e6"/>
+    <rect x="172" y="55" width="390" height="193" rx="9" fill="url(#paper)"/>
+    <text x="191" y="79" fill="#798a70" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="600" letter-spacing="1.6">ARCHITECTURE PREVIEW</text>
+    <rect x="198" y="103" width="338" height="115" rx="8" fill="none" stroke="#a8bd94"/>
+    <path d="M262 148H342M392 148H472" stroke="#668f50" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <g fill="#fff" stroke="#b8c7aa">
+      <rect x="216" y="127" width="43" height="43" rx="9"/>
+      <rect x="346" y="127" width="43" height="43" rx="9"/>
+      <rect x="476" y="127" width="43" height="43" rx="9"/>
+    </g>
+    <g fill="none" stroke="#5c7b49" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="226" y="137" width="23" height="16" rx="2"/><path d="M237 154v5m-5 0h10"/>
+      <path d="m362 138-5 10 5 10m11-20 5 10-5 10m-5-22-2 24"/>
+      <ellipse cx="498" cy="139" rx="11" ry="4"/><path d="M487 139v16c0 6 22 6 22 0v-16m-22 8c0 6 22 6 22 0"/>
+    </g>
+    <g fill="#586d49" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600" text-anchor="middle">
+      <text x="237" y="190">BROWSER</text><text x="367" y="190">APP</text><text x="497" y="190">DATA</text>
+    </g>
+  </g>
+</svg>

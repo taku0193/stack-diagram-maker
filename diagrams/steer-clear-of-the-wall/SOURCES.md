@@ -26,3 +26,5 @@
 Next.js・React・TypeScript・SQLiteには取得したブランドロゴを使用する。MediaPipeはSkillのロゴ取得元で見つからず、公式画像ディレクトリも404だったため、「姿勢検出」という機能ノードをLucideの人物ピクトグラムで表す。MediaPipeのロゴの代替品や再描画ではない。その他のブラウザAPI・機能もLucideの汎用ピクトグラムを使う。
 
 各アイコンの取得元は `icons/manifest.json` を参照。外部ギャラリーへの投稿は行わない。
+
+SQLiteはタイルに収まるマークを使うため、Skillの明示URL指定でDeviconの `sqlite-original.svg` を取得した。manifestの `source: explicit` は取得方法を表し、実際の配布元は記載URLのDevicon。

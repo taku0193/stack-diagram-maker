@@ -79,3 +79,16 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - GitHubの `main` をコミット `384c70dd2a5b110ac4a206a83879f8e4dca3aa20` に固定して、README、package.json、カメラ、姿勢検出、ゲーム状態、描画、心拍、ランキングの実装を確認した。
 - ブラウザ内の映像/姿勢処理と心拍メモリ、外部WASM/モデル取得、Node.js側のランキングAPI/SQLiteを区別する。調査根拠を `diagrams/steer-clear-of-the-wall/SOURCES.md` に記録した。
 - 公式Skillのfetch_icons.pyでブランドロゴとLucideのピクトグラムを取得。MediaPipeロゴは取得元に存在せず、公式の画像ディレクトリも404だったため、姿勢検出は汎用の機能アイコンで表す。取得エラーを隠してロゴ生成を偽装しない。
+
+## 2026-11-10 — STEER CLEAR OF THE WALLの構成図を追加
+
+- Skillの公式テンプレートとgeometry.mdから `diagrams/steer-clear-of-the-wall/draft.html` を作成。入力・姿勢変換・ゲーム判定・React/Canvas・音声・心拍・ランキングAPI・SQLiteの境界と経路を図にした。
+- 心拍のブラウザ内保持とランキング保存を分け、外部モデル取得先、任意のFitbit接続、同一PC/SSH先でのサーバー実行を注記した。描いたのは実装の機能単位であり、各ノードが独立したサービスという意味ではない。
+- SQLiteは初回取得の文字入りロゴからDeviconのマークへ変更した。色・形は変更せず、配布元はmanifestに記録した。
+- 公式build.pyで `public/diagrams/steer-clear-of-the-wall.html` を生成（約146KB）。画像・フォントを埋め込み、スクリプト不要/CSP付きの自己完結HTMLとした。
+- 公式render_png.pyでライト・ダーク両方を描画して目視確認。姿勢変換ノードの役割表記を短くし、矢印と文字が重ならないよう再生成した。
+- `public/diagrams/index.json` の先頭へ追加し、ライブラリを2件にした。既存のVueサンプルも選択できる。再生成コマンド `npm run diagram:build:steer` と調査/生成手順を追加した。
+- 既存ロジックの変更はなく、回帰検証として `npm test` を実行。3ファイル・62テスト成功。`npm run build` も成功した。
+- 追加後の2件を実際のparseManifestで検証し、生成HTMLの存在、distとの完全一致、未解決トークンなし、scriptなし、画像/フォントの外部参照なしを確認した。
+- 開いていたアプリを再読み込みし、2件の一覧、新しい図の初期選択、iframeと別タブリンクの対象URLを確認した。
+- 調査資料とアイコンを `6b12cf5` で先にcommit・push済み。構成図と一覧更新も区切りとしてcommit・pushする。対象ゲームのリポジトリは変更していない。

@@ -20,10 +20,10 @@
     "bytes": 1744
   },
   "sqlite": {
-    "source": "svgl",
-    "url": "https://svgl.app/library/sqlite.svg",
+    "source": "explicit",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/sqlite/sqlite-original.svg",
     "file": "sqlite.svg",
-    "bytes": 3646
+    "bytes": 2422
   },
   "camera": {
     "source": "lucide",

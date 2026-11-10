@@ -1,5 +1,10 @@
 [
   {
+    "id": "steer-clear-of-the-wall",
+    "title": "STEER CLEAR OF THE WALL · システム構成",
+    "filename": "steer-clear-of-the-wall.html"
+  },
+  {
     "id": "vue-fastapi-postgres",
     "title": "Vue 3 + FastAPI + PostgreSQL",
     "filename": "vue-fastapi-postgres.html"

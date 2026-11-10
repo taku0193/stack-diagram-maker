@@ -32,6 +32,8 @@ npm run dev -- --host 127.0.0.1 --port 5175
 
 サンプルは `Browser → Vue 3 → FastAPI → PostgreSQL`。`public/diagrams/vue-fastapi-postgres.html` は公式Skillのテンプレート・ロゴ取得・ビルド手順で生成しました。ロゴとフォントを埋め込んだ、JavaScript不要の自己完結HTMLです。
 
+`STEER CLEAR OF THE WALL` の実装に基づくシステム構成図も収録しています。カメラ・MediaPipe・ゲーム処理・Canvas/Web Audio・Fitbit心拍・ランキングAPI/SQLiteをまとめています。確認したソースとコミットは [構成図の根拠](diagrams/steer-clear-of-the-wall/SOURCES.md)、再生成は `npm run diagram:build:steer` を参照してください。
+
 ## Skillと図の生成
 
 Skillは `.agents/skills/stack-diagram/` にプロジェクトローカルで同梱しています。グローバルへの導入は不要です。公式リポジトリ、固定コミット、ライセンスは [docs/SKILL_PROVENANCE.md](docs/SKILL_PROVENANCE.md) を参照してください。CodexのSkill一覧には次のターン以降に反映されます。表示されない場合は、このプロジェクトを開き直してください。

@@ -103,3 +103,9 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - `npm test`: 3ファイル・62テスト成功。`npm run build`: 型検査・ビルド成功。
 - マニフェスト3件を実際のparseManifestで検証し、全HTMLの存在とdistとの一致、CSPあり、script/未解決トークン/外部リソース参照なしを確認した。
 - ブラウザ接続の古いハンドルで操作できなかったため、接続を再初期化して復旧。開いているアプリを再読み込みし、3件の一覧、新しい図の初期選択とiframeプレビュー、別タブリンクのURLを確認した。
+
+## 2026-11-10 — 有名リポジトリ: Excalidrawの調査
+
+- ユーザーから有名なリポジトリを題材にする依頼を受け、`excalidraw/excalidraw` を選んだ。
+- `master` をコミット `701b901a0f1ba3d0b390d9cdf63d112e25abac4b` に固定し、README、依存関係、App、LocalData、renderer/export、暗号化、Collab/Portal、Firebaseの実装を確認した。上流コードは実行・変更していない。
+- 通常の編集/ブラウザ保存と、共同編集時の暗号化/Socket.IO/Firebaseを分けて図にする。npm版エディタとWebアプリ側の機能を区別し、根拠と省略範囲を `diagrams/excalidraw/SOURCES.md` に記録した。

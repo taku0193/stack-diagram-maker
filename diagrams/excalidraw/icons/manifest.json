@@ -1,0 +1,58 @@
+{
+  "react": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/react_light.svg",
+    "file": "react.svg",
+    "bytes": 6534,
+    "dark_file": "react_dark.svg",
+    "dark_url": "https://svgl.app/library/react_dark.svg"
+  },
+  "typescript": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/typescript.svg",
+    "file": "typescript.svg",
+    "bytes": 1744
+  },
+  "firebase": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/firebase.svg",
+    "file": "firebase.svg",
+    "bytes": 1207
+  },
+  "socketio": {
+    "source": "devicon",
+    "url": "https://raw.githubusercontent.com/devicons/devicon/master/icons/socketio/socketio-original.svg",
+    "file": "socketio.svg",
+    "bytes": 1306
+  },
+  "canvas": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/paintbrush.svg",
+    "file": "canvas.svg",
+    "bytes": 701
+  },
+  "save": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/save.svg",
+    "file": "save.svg",
+    "bytes": 489
+  },
+  "database": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/database.svg",
+    "file": "database.svg",
+    "bytes": 405
+  },
+  "export": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/file-output.svg",
+    "file": "export.svg",
+    "bytes": 521
+  },
+  "crypto": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/lock-keyhole.svg",
+    "file": "crypto.svg",
+    "bytes": 417
+  }
+}

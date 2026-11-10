@@ -72,3 +72,10 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - READMEを完成後の機能、起動方法、Skillと図の生成・追加手順、検証結果に更新した。
 - 各段階を `main` にcommit・push: `40c40c3`（Skill/テスト環境）、`001d9e9`（一覧・選択検証）、`b02b1ae`（構成図生成）、`6651f5b`（ライブラリ画面）。
 - MVPの受け入れ条件はすべて完了。既存SSH接続のため5174番は使用せず、確認用アプリは `http://127.0.0.1:5175/` で起動中。既存プロセスに変更は加えていない。
+
+## 2026-11-10 — STEER CLEAR OF THE WALLの構成調査
+
+- ユーザー指定の `taku0193/steer-clear-of-the-wall` を読み取り、構成図を追加する作業を開始した。
+- GitHubの `main` をコミット `384c70dd2a5b110ac4a206a83879f8e4dca3aa20` に固定して、README、package.json、カメラ、姿勢検出、ゲーム状態、描画、心拍、ランキングの実装を確認した。
+- ブラウザ内の映像/姿勢処理と心拍メモリ、外部WASM/モデル取得、Node.js側のランキングAPI/SQLiteを区別する。調査根拠を `diagrams/steer-clear-of-the-wall/SOURCES.md` に記録した。
+- 公式Skillのfetch_icons.pyでブランドロゴとLucideのピクトグラムを取得。MediaPipeロゴは取得元に存在せず、公式の画像ディレクトリも404だったため、姿勢検出は汎用の機能アイコンで表す。取得エラーを隠してロゴ生成を偽装しない。

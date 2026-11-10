@@ -1,0 +1,76 @@
+{
+  "next": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/nextjs_icon_dark.svg",
+    "file": "next.svg",
+    "bytes": 1091
+  },
+  "react": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/react_light.svg",
+    "file": "react.svg",
+    "bytes": 6534,
+    "dark_file": "react_dark.svg",
+    "dark_url": "https://svgl.app/library/react_dark.svg"
+  },
+  "typescript": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/typescript.svg",
+    "file": "typescript.svg",
+    "bytes": 1744
+  },
+  "sqlite": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/sqlite.svg",
+    "file": "sqlite.svg",
+    "bytes": 3646
+  },
+  "camera": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/camera.svg",
+    "file": "camera.svg",
+    "bytes": 511
+  },
+  "adapter": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/scan-line.svg",
+    "file": "adapter.svg",
+    "bytes": 467
+  },
+  "audio": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/volume-2.svg",
+    "file": "audio.svg",
+    "bytes": 552
+  },
+  "bluetooth": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/bluetooth.svg",
+    "file": "bluetooth.svg",
+    "bytes": 326
+  },
+  "heart": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/heart-pulse.svg",
+    "file": "heart.svg",
+    "bytes": 508
+  },
+  "result": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/trophy.svg",
+    "file": "result.svg",
+    "bytes": 628
+  },
+  "assets": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/package.svg",
+    "file": "assets.svg",
+    "bytes": 521
+  },
+  "pose": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/person-standing.svg",
+    "file": "pose.svg",
+    "bytes": 406
+  }
+}

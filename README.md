@@ -2,6 +2,19 @@
 
 **これは未実装の出発点です。** `caru-ini/stack-diagram` はブラウザにimportする描画ライブラリではなく **Codex向けAgent Skill** です。Codexで構成図HTMLを1枚生成して、独立したWeb画面で一覧・プレビューします。
 
+## GitHubから取得して起動する
+
+リポジトリ: https://github.com/taku0193/stack-diagram-maker （非公開）
+
+```sh
+git clone https://github.com/taku0193/stack-diagram-maker.git
+cd stack-diagram-maker
+npm ci
+npm run dev
+```
+
+`http://localhost:5174/` を開いてください。現時点ではスターター画面を表示します。
+
 ## Codexデスクトップでの開始方法
 
 1. このフォルダ（`stack-diagram-maker-codex`）をMacの任意の場所に保存する。

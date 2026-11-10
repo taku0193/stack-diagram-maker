@@ -13,7 +13,8 @@
     "test": "vitest run",
     "diagram:build": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/vue-fastapi-postgres.draft.html diagrams/icons public/diagrams/vue-fastapi-postgres.html --fonts .agents/skills/stack-diagram/assets/fonts",
     "diagram:build:steer": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/steer-clear-of-the-wall/draft.html diagrams/steer-clear-of-the-wall/icons public/diagrams/steer-clear-of-the-wall.html --fonts .agents/skills/stack-diagram/assets/fonts",
-    "diagram:build:self": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/stack-diagram-maker/draft.html diagrams/stack-diagram-maker/icons public/diagrams/stack-diagram-maker.html --fonts .agents/skills/stack-diagram/assets/fonts"
+    "diagram:build:self": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/stack-diagram-maker/draft.html diagrams/stack-diagram-maker/icons public/diagrams/stack-diagram-maker.html --fonts .agents/skills/stack-diagram/assets/fonts",
+    "diagram:build:excalidraw": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/excalidraw/draft.html diagrams/excalidraw/icons public/diagrams/excalidraw.html --fonts .agents/skills/stack-diagram/assets/fonts"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",

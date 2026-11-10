@@ -54,5 +54,11 @@
     "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/lock-keyhole.svg",
     "file": "crypto.svg",
     "bytes": 417
+  },
+  "excalidraw": {
+    "source": "explicit",
+    "url": "https://raw.githubusercontent.com/excalidraw/excalidraw/701b901a0f1ba3d0b390d9cdf63d112e25abac4b/public/favicon.svg",
+    "file": "excalidraw.svg",
+    "bytes": 4937
   }
 }

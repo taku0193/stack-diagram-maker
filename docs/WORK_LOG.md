@@ -109,3 +109,14 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - ユーザーから有名なリポジトリを題材にする依頼を受け、`excalidraw/excalidraw` を選んだ。
 - `master` をコミット `701b901a0f1ba3d0b390d9cdf63d112e25abac4b` に固定し、README、依存関係、App、LocalData、renderer/export、暗号化、Collab/Portal、Firebaseの実装を確認した。上流コードは実行・変更していない。
 - 通常の編集/ブラウザ保存と、共同編集時の暗号化/Socket.IO/Firebaseを分けて図にする。npm版エディタとWebアプリ側の機能を区別し、根拠と省略範囲を `diagrams/excalidraw/SOURCES.md` に記録した。
+
+## 2026-11-10 — Excalidrawの構成図を生成
+
+- 公式Skillのfetch_icons.pyでReact/TypeScript/Firebase/Socket.IOのロゴとLucideの機能アイコンを取得した。Excalidrawは取得元に見つからなかったため、確認済みの公式リポジトリ内 `public/favicon.svg` を明示URL指定で取得した。
+- 公式テンプレートとgeometry.mdから `diagrams/excalidraw/draft.html` を作成し、公式build.pyで `public/diagrams/excalidraw.html` を生成（約142KB）。フォント・画像を埋め込み、CSPを付け、JavaScriptなしで表示できる。
+- Reactエディタ、シーン状態、Canvas/Rough.js、自動保存、localStorage/IndexedDB、ファイル出力、AES-GCM、Socket.IO、Firestore/Firebase Storageを描いた。保存の矢印は送信側の主要経路、ルーム同期は双方向として区別した。
+- 公式render_png.pyでライト・ダーク両方を描画し、実画像でロゴ・文字・矢印の表示と重なりがないことを確認した。
+- 一覧の先頭に追加し、4件にした。`npm run diagram:build:excalidraw` と調査/再生成手順を追加した。画面ロジックは変更していない。
+- `npm test`: 3ファイル・62テスト成功。`npm run build`: 型検査・ビルド成功。マニフェスト4件を実際のparseManifestで検証し、全HTMLの存在とdistとの一致、CSPあり、script/未解決トークン/外部リソース参照なしを確認した。
+- 開いているライブラリを再読み込みし、4件の一覧、新しい図の初期選択、iframeプレビューと別タブリンクのURLを確認した。古いブラウザ接続でのエラーは、同じブラウザへの接続を再初期化して復旧した。
+- 調査資料・取得済みアイコンは `7f56ee6` で先にcommit・push済み。生成図と一覧更新を次の区切りとしてcommit・pushする。

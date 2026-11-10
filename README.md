@@ -36,6 +36,8 @@ npm run dev -- --host 127.0.0.1 --port 5175
 
 このアプリ自身の「生成から閲覧まで」も収録しています。Codex/SkillによるHTML生成、一覧JSONへの登録、Vite配信、TypeScript画面での選択と表示を1枚にまとめています。再生成は `npm run diagram:build:self`、根拠と手順は [図のREADME](diagrams/stack-diagram-maker/README.md) を参照してください。
 
+有名なOSSの例として `excalidraw/excalidraw` のエディタと共同編集の図も収録しています。React/Canvas、ブラウザ保存、Web Crypto、Socket.IO、Firebaseを公開コードから整理しています。再生成は `npm run diagram:build:excalidraw`、調査の根拠は [SOURCES.md](diagrams/excalidraw/SOURCES.md) を参照してください。
+
 ## Skillと図の生成
 
 Skillは `.agents/skills/stack-diagram/` にプロジェクトローカルで同梱しています。グローバルへの導入は不要です。公式リポジトリ、固定コミット、ライセンスは [docs/SKILL_PROVENANCE.md](docs/SKILL_PROVENANCE.md) を参照してください。CodexのSkill一覧には次のターン以降に反映されます。表示されない場合は、このプロジェクトを開き直してください。

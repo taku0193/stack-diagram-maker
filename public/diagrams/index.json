@@ -1,5 +1,10 @@
 [
   {
+    "id": "excalidraw",
+    "title": "Excalidraw · エディタと共同編集",
+    "filename": "excalidraw.html"
+  },
+  {
     "id": "stack-diagram-maker",
     "title": "Stack Diagram Maker · 生成から閲覧まで",
     "filename": "stack-diagram-maker.html"

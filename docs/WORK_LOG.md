@@ -30,3 +30,12 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - 公式README、SKILL.mdと同梱スクリプトを確認し、公式コミット `5af3b095fff7109c905c5284dc510dc06588bade` のSkillを `.agents/skills/stack-diagram/` へ導入した。取得元とライセンスを `docs/SKILL_PROVENANCE.md` に記録した。
 - `npm install --save-dev vitest@^5.1.0 jsdom@latest` を実行し、Vitest 5.1.0へ更新、DOMテスト用jsdomを導入。インストール時のauditは脆弱性0件。
 - Skillの `fetch_icons.py` でVue/FastAPI/PostgreSQLのロゴ取得を開始。公式テンプレートとgeometry.mdに沿ってHTMLを生成する。
+
+## 2026-11-10 — 一覧・選択ロジックのTDD
+
+- Red: `manifest.test.ts` / `selection.test.ts` を先に作成し、未実装モジュールのため2スイートが失敗することを確認した。
+- Green: `manifest.ts` / `selection.ts` を実装。53テストが成功した。
+- 配列、必須項目、重複IDを検証し、filenameを英数字・ハイフン・アンダースコアからなる単一の `.html` ファイル名に限定した。外部URL、絶対パス、スラッシュ、逆スラッシュ、エンコードされたパス、クエリ、フラグメント、制御文字を拒否する。
+- 選択はマニフェストに存在するIDだけを許可し、URLは `/diagrams/<filename>` に限定。選択時にもファイル名を再検証する。
+- `npm run build`: 型検査・本番ビルド成功。
+- 同梱フォントライセンスに元から存在する末尾空白は、公式Skillの原文を保持するため変更しなかった。

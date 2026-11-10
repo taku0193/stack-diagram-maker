@@ -1,10 +1,12 @@
-# Stack Diagram Maker — Codex Desktop 用スターター
+# Stack Diagram Maker
 
-**これは未実装の出発点です。** `caru-ini/stack-diagram` はブラウザにimportする描画ライブラリではなく **Codex向けAgent Skill** です。Codexで構成図HTMLを1枚生成して、独立したWeb画面で一覧・プレビューします。
-
-## GitHubから取得して起動する
+Codexの `stack-diagram` Skillで生成した構成図HTMLを、一覧・プレビュー・別タブ表示できるローカルWebアプリです。Vite + vanilla TypeScriptで動作します。
 
 リポジトリ: https://github.com/taku0193/stack-diagram-maker （非公開）
+
+## 起動する
+
+Node.js 22.12以降の22系、24系、または26以降を使用してください。検証環境はNode.js 26.13.0 / npm 11.20.0です。
 
 ```sh
 git clone https://github.com/taku0193/stack-diagram-maker.git
@@ -13,26 +15,68 @@ npm ci
 npm run dev
 ```
 
-`http://localhost:5174/` を開いてください。現時点ではスターター画面を表示します。
+`http://localhost:5174/` を開きます。ポートが使用中なら明示的に変更できます。
 
-## Codexデスクトップでの開始方法
+```sh
+npm run dev -- --host 127.0.0.1 --port 5175
+```
 
-1. このフォルダ（`stack-diagram-maker-codex`）をMacの任意の場所に保存する。
-2. Codexデスクトップアプリでこのフォルダを**Pixel FXとは別プロジェクト・別セッション**として開く。
-3. 次のメッセージを送る。
-   **「このフォルダの `CODEX_START.md` を読み、`AGENTS.md` と `docs/MVP_SPEC.md` に従ってTDDで実装を開始してください。」**
-4. CodexにSkillの**プロジェクトローカルインストール**と構成図生成をさせる。
-5. `npm install` → `npm run dev` → `http://localhost:5174/` で結果を閲覧する。
+今回の確認では5174番が既存のSSH接続で使用中だったため、`http://127.0.0.1:5175/` を使用しました。ポートの競合時に既存プロセスを終了する必要はありません。
 
-### Skill導入の注意
+## できること
 
-- 参照元: https://github.com/caru-ini/stack-diagram
-- 公式の簡易導入例: `npx skills add caru-ini/stack-diagram`
-- ただし他プロジェクトへ影響させないため、Codexには `.agents/skills/stack-diagram/` の**プロジェクト内だけ**へ配置するよう指定しています。
-- Python 3.9+ が必要。ロゴ取得にはインターネット接続が必要。
-- PNG書き出しはMVP対象外（実施する場合はPlaywright+Chromiumが必要）。
-- 外部ギャラリーへの投稿は禁止。自動公開しない。
+- 構成図の一覧表示、選択とプレビュー
+- HTMLを別タブで開く
+- ロード中・空のライブラリ・取得失敗・不正な一覧データの表示と再読み込み
+- デスクトップとスマートフォン幅での表示（狭い画面では図の枠内を横スクロール）
 
-### 初期状態の動作
+サンプルは `Browser → Vue 3 → FastAPI → PostgreSQL`。`public/diagrams/vue-fastapi-postgres.html` は公式Skillのテンプレート・ロゴ取得・ビルド手順で生成しました。ロゴとフォントを埋め込んだ、JavaScript不要の自己完結HTMLです。
 
-初期ファイルはViteで起動できる画面のみ。Skill・生成された構成図・Node/npmパッケージはZIPに同梱していません。まずCodexに実物のSkillを導入させてください。
+## Skillと図の生成
+
+Skillは `.agents/skills/stack-diagram/` にプロジェクトローカルで同梱しています。グローバルへの導入は不要です。公式リポジトリ、固定コミット、ライセンスは [docs/SKILL_PROVENANCE.md](docs/SKILL_PROVENANCE.md) を参照してください。CodexのSkill一覧には次のターン以降に反映されます。表示されない場合は、このプロジェクトを開き直してください。
+
+同梱サンプルはPython 3.9以降があれば、ネットワークなしで再生成できます。
+
+```sh
+npm run diagram:build
+```
+
+生成元と手順は [diagrams/README.md](diagrams/README.md) にあります。新しい図はCodexにSkillを使って生成させ、`public/diagrams/` に置き、`public/diagrams/index.json` へ追加します。
+
+```json
+[
+  {
+    "id": "vue-fastapi-postgres",
+    "title": "Vue 3 + FastAPI + PostgreSQL",
+    "filename": "vue-fastapi-postgres.html"
+  }
+]
+```
+
+`id` は先頭が英数字、その後は英数字・`-`・`_` の一意な文字列です。`title` は空でない文字列、`filename` は同じ文字種からなる単一の `.html` ファイル名に限定します。外部URL、絶対パス、ディレクトリ、`../`、エンコードされたパス、クエリ、フラグメントは拒否します。追加後はページを再読み込みしてください。
+
+ブラウザからのAI生成、図の編集・アップロード、バックエンド、認証、データベース、PNG/PDF出力はMVPの対象外です。図中のFastAPI/PostgreSQLは構成図のノードで、アプリ自体の依存サービスではありません。
+
+## プレビューの扱い
+
+表示対象は、このプロジェクトで管理する生成済みHTMLだけです。iframeは `sandbox=""` と `referrerpolicy="no-referrer"` を使い、スクリプト・同一オリジンアクセスなどの権限を追加しません。別タブリンクは `noopener noreferrer` を設定しています。
+
+同梱の図には外部リソースとスクリプトを制限するCSPを含めています。別タブ表示はHTMLを直接開くため、今後追加する図も信頼できる自己完結ファイルに限定してください。
+
+## 検証
+
+```sh
+npm test
+npm run build
+npm audit
+```
+
+- Vitest: 3ファイル・62テスト成功（一覧検証、選択、DOMの表示・切り替え・安全なリンク・空状態・エラー・再試行）。
+- TypeScriptの型検査とViteの本番ビルド成功。
+- `npm audit`: 既知の脆弱性0件。
+- 公式Skillでライト・ダークのPNGを描画して目視確認。Chromeでデスクトップ・モバイル、別タブ、空状態、エラーと再読み込みを確認。
+
+本番ビルドをローカルで確認する場合は `npm run preview` を実行し、`http://localhost:4174/` を開いてください。
+
+作業・エラー・検証の記録は [docs/WORK_LOG.md](docs/WORK_LOG.md) にあります。

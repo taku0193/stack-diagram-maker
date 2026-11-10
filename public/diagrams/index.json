@@ -1,5 +1,10 @@
 [
   {
+    "id": "stack-diagram-maker",
+    "title": "Stack Diagram Maker · 生成から閲覧まで",
+    "filename": "stack-diagram-maker.html"
+  },
+  {
     "id": "steer-clear-of-the-wall",
     "title": "STEER CLEAR OF THE WALL · システム構成",
     "filename": "steer-clear-of-the-wall.html"

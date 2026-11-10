@@ -92,3 +92,14 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - 追加後の2件を実際のparseManifestで検証し、生成HTMLの存在、distとの完全一致、未解決トークンなし、scriptなし、画像/フォントの外部参照なしを確認した。
 - 開いていたアプリを再読み込みし、2件の一覧、新しい図の初期選択、iframeと別タブリンクの対象URLを確認した。
 - 調査資料とアイコンを `6b12cf5` で先にcommit・push済み。構成図と一覧更新も区切りとしてcommit・pushする。対象ゲームのリポジトリは変更していない。
+
+## 2026-11-10 — このアプリ自身の構成図を作成
+
+- ユーザーの「なんか作って欲しい」という依頼を受け、現在のライブラリに合う題材として、このアプリ自身の「生成から閲覧まで」を作成した。
+- コミット `7439da81b87c16aaaf5fc4ec93da54500f3d6b20` の実装と指示書を確認し、Codex/Skill/Pythonでの生成と、Vite/TypeScript/iframeでの閲覧を分けて表した。JSON登録は作成時の作業として別の矢印にした。
+- 公式fetch_icons.pyでロゴ・Lucideピクトグラムを取得し、Browserには同梱generic SVGを使用。公式テンプレートから `diagrams/stack-diagram-maker/draft.html` を作り、公式build.pyで `public/diagrams/stack-diagram-maker.html` を生成した。
+- ライブラリの先頭へ追加し、合計3件とした。`npm run diagram:build:self` と根拠・再生成手順を追加した。画面のロジックは変更していない。
+- ライト・ダーク両方のPNGを公式render_png.pyで描画し、文字・矢印・ロゴを目視確認した。Browserの汎用アイコンは暗い背景でも見えるよう白いプレートを設定した。
+- `npm test`: 3ファイル・62テスト成功。`npm run build`: 型検査・ビルド成功。
+- マニフェスト3件を実際のparseManifestで検証し、全HTMLの存在とdistとの一致、CSPあり、script/未解決トークン/外部リソース参照なしを確認した。
+- ブラウザ接続の古いハンドルで操作できなかったため、接続を再初期化して復旧。開いているアプリを再読み込みし、3件の一覧、新しい図の初期選択とiframeプレビュー、別タブリンクのURLを確認した。

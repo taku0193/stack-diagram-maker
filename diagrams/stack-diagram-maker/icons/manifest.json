@@ -1,0 +1,58 @@
+{
+  "codex": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/openai.svg",
+    "file": "codex.svg",
+    "bytes": 2430,
+    "dark_file": "codex_dark.svg",
+    "dark_url": "https://svgl.app/library/openai_dark.svg"
+  },
+  "python": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/python.svg",
+    "file": "python.svg",
+    "bytes": 1126
+  },
+  "html": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/html5.svg",
+    "file": "html.svg",
+    "bytes": 382
+  },
+  "vite": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/vite.svg",
+    "file": "vite.svg",
+    "bytes": 10132
+  },
+  "typescript": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/typescript.svg",
+    "file": "typescript.svg",
+    "bytes": 1744
+  },
+  "manifest": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/list-tree.svg",
+    "file": "manifest.svg",
+    "bytes": 432
+  },
+  "preview": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/shield-check.svg",
+    "file": "preview.svg",
+    "bytes": 495
+  },
+  "tab": {
+    "source": "lucide",
+    "url": "https://cdn.jsdelivr.net/npm/lucide-static/icons/external-link.svg",
+    "file": "tab.svg",
+    "bytes": 413
+  },
+  "browser": {
+    "source": "stack-diagram generic",
+    "file": "browser.svg",
+    "bytes": 242,
+    "url": "https://github.com/caru-ini/stack-diagram/blob/5af3b095fff7109c905c5284dc510dc06588bade/skills/stack-diagram/assets/generic/browser.svg"
+  }
+}

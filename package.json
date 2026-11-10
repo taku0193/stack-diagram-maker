@@ -7,7 +7,8 @@
     "dev": "vite --port 5174 --strictPort",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --port 4174",
-    "test": "vitest run"
+    "test": "vitest run",
+    "diagram:build": "python3 .agents/skills/stack-diagram/scripts/build.py diagrams/vue-fastapi-postgres.draft.html diagrams/icons public/diagrams/vue-fastapi-postgres.html --fonts .agents/skills/stack-diagram/assets/fonts"
   },
   "devDependencies": {
     "jsdom": "^31.0.0",

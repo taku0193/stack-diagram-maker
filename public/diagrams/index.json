@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "id": "vue-fastapi-postgres",
+    "title": "Vue 3 + FastAPI + PostgreSQL",
+    "filename": "vue-fastapi-postgres.html"
+  }
+]

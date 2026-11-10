@@ -39,3 +39,12 @@ Codexは段階ごとに日付、Skill導入、生成ファイル、テストコ�
 - 選択はマニフェストに存在するIDだけを許可し、URLは `/diagrams/<filename>` に限定。選択時にもファイル名を再検証する。
 - `npm run build`: 型検査・本番ビルド成功。
 - 同梱フォントライセンスに元から存在する末尾空白は、公式Skillの原文を保持するため変更しなかった。
+
+## 2026-11-10 — Skillで構成図を生成
+
+- `fetch_icons.py diagrams/icons vue:vuejs fastapi postgres:postgresql` でsvglからロゴ3件を取得し、BrowserにはSkillのgeneric SVGを使用した。取得元は `diagrams/icons/manifest.json` に記録した。
+- 公式テンプレートを元に `diagrams/vue-fastapi-postgres.draft.html` を作成。geometry.mdに従い、4ノードを横方向の主経路で接続した。
+- 公式 `build.py` で `public/diagrams/vue-fastapi-postgres.html` を生成（約108KB）。全フォント・画像を埋め込み、JavaScriptなし、外部リソースを制限するCSPを追加した。再生成用 `npm run diagram:build` を追加した。
+- 一時フォルダーのPython仮想環境にPlaywright 1.58.0を導入し、公式 `render_png.py` でライト・ダーク両方のPNGを出力。実際に2画像を開き、4ノード・矢印・文字・ロゴの表示と重なりがないことを目視確認した。
+- Playwright CLIではfileプロトコルの表示が拒否されたため、アプリ画面の確認にはローカルHTTPを使用する。
+- ギャラリー投稿・外部公開・ログイン連携は行っていない。

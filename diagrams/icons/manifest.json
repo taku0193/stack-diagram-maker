@@ -1,0 +1,25 @@
+{
+  "vue": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/vue.svg",
+    "file": "vue.svg",
+    "bytes": 368
+  },
+  "fastapi": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/fastapi.svg",
+    "file": "fastapi.svg",
+    "bytes": 280
+  },
+  "postgres": {
+    "source": "svgl",
+    "url": "https://svgl.app/library/postgresql.svg",
+    "file": "postgres.svg",
+    "bytes": 3944
+  },
+  "browser": {
+    "source": "stack-diagram generic",
+    "file": "browser.svg",
+    "url": "https://github.com/caru-ini/stack-diagram/blob/5af3b095fff7109c905c5284dc510dc06588bade/skills/stack-diagram/assets/generic/browser.svg"
+  }
+}

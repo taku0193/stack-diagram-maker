@@ -1,79 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title description">
   <title id="title">Stack Diagram Maker</title>
-  <desc id="desc">Architecture, at a glance. Generate with Codex. Browse locally.</desc>
+  <desc id="description">An HTML document flows into a library, which connects to preview and open actions.</desc>
   <defs>
-    <linearGradient id="background" x2="1" y2="1">
-      <stop stop-color="#10211a"/>
-      <stop offset="1" stop-color="#1b3025"/>
+    <linearGradient id="background" x2="100%" y2="100%">
+      <stop stop-color="#101427"/>
+      <stop offset="1" stop-color="#080b16"/>
     </linearGradient>
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M32 0H0V32" fill="none" stroke="#97c18b" stroke-opacity=".065"/>
+    <radialGradient id="halo">
+      <stop stop-color="#735cff" stop-opacity=".27"/>
+      <stop offset="1" stop-color="#735cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop stop-color="#9f9bff"/>
+      <stop offset="1" stop-color="#83e8ff"/>
+    </linearGradient>
+    <linearGradient id="node" x2="100%" y2="100%">
+      <stop stop-color="#29264c"/>
+      <stop offset="1" stop-color="#141b31"/>
+    </linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1.1" fill="#adb9f3" fill-opacity=".2"/>
     </pattern>
-    <pattern id="paper" width="16" height="16" patternUnits="userSpaceOnUse">
-      <circle cx="1" cy="1" r=".8" fill="#b4c3a9"/>
-    </pattern>
-    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="m0 0 8 4-8 4Z" fill="#668f50"/>
-    </marker>
+    <clipPath id="canvas">
+      <rect width="1280" height="360" rx="24"/>
+    </clipPath>
   </defs>
-  <rect width="1280" height="360" rx="20" fill="url(#background)"/>
-  <rect width="1280" height="360" rx="20" fill="url(#grid)"/>
-  <g fill="none" stroke="#c7ed8a" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round">
-    <path d="m70 46 14 8-14 8-14-8 14-8Z"/>
-    <path d="m56 61 14 8 14-8M56 68l14 8 14-8"/>
+
+  <g clip-path="url(#canvas)">
+    <rect width="1280" height="360" fill="url(#background)"/>
+    <ellipse cx="950" cy="154" rx="460" ry="280" fill="url(#halo)"/>
+    <rect x="624" y="24" width="600" height="312" fill="url(#grid)"/>
+    <path d="M624 73V48h25m550 0h25v25m0 214v25h-25m-550 0h-25v-25"
+          fill="none" stroke="#4b527e" stroke-width="1.5"/>
+    <rect x="1" y="1" width="1278" height="358" rx="23" fill="none" stroke="#323756" stroke-width="2"/>
   </g>
-  <text x="101" y="66" fill="#c7ed8a" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2.4">STACK DIAGRAM MAKER</text>
-  <g fill="#f4f8ef" font-family="Arial, Helvetica, sans-serif" font-size="53" font-weight="700" letter-spacing="-1.8">
-    <text x="52" y="146">Your architecture.</text>
-    <text x="52" y="207">In one place.</text>
+
+  <g transform="translate(66 60)">
+    <rect width="36" height="36" rx="10" fill="#242447" stroke="#55558e"/>
+    <path d="m8 15 10-6 10 6-10 6zM8 20l10 6 10-6m-20 5 10 6 10-6"
+          fill="none" stroke="url(#accent)" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="52" y="24" fill="#b9c3ea" font-family="ui-monospace, Menlo, monospace" font-size="16"
+          letter-spacing="2.5">LOCAL DIAGRAM LIBRARY</text>
   </g>
-  <text x="54" y="252" fill="#a9bbaa" font-family="Arial, Helvetica, sans-serif" font-size="16">Generate with Codex. Browse locally.</text>
-  <g font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" letter-spacing="1.1">
-    <rect x="52" y="291" width="66" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
-    <text x="68" y="307" fill="#c6d7ba">VITE</text>
-    <rect x="127" y="291" width="112" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
-    <text x="141" y="307" fill="#c6d7ba">TYPESCRIPT</text>
-    <rect x="248" y="291" width="80" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
-    <text x="262" y="307" fill="#c6d7ba">VITEST</text>
-    <rect x="337" y="291" width="193" height="25" rx="5" fill="#243b2d" stroke="#37543d"/>
-    <text x="352" y="307" fill="#c6d7ba">SELF-CONTAINED HTML</text>
+
+  <g font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-size="72" font-weight="750" letter-spacing="-3.5">
+    <text x="64" y="185" fill="#f4f6ff">Stack Diagram</text>
+    <text x="64" y="262" fill="#a4cbff">Maker</text>
   </g>
-  <g transform="translate(650 48)">
-    <rect width="578" height="264" rx="16" fill="#1b3025" stroke="#446044"/>
-    <path d="M0 39H578" stroke="#38513a"/>
-    <g fill="#78976a"><circle cx="20" cy="20" r="3"/><circle cx="32" cy="20" r="3"/><circle cx="44" cy="20" r="3"/></g>
-    <text x="68" y="24" fill="#9eb494" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="1.8">LOCAL LIBRARY</text>
-    <rect x="16" y="55" width="142" height="193" rx="9" fill="#14251b"/>
-    <rect x="27" y="68" width="120" height="53" rx="7" fill="#304d2b" stroke="#799c5e"/>
-    <rect x="39" y="80" width="20" height="20" rx="5" fill="#c7ed8a"/>
-    <path d="m43 87 6-3 6 3-6 3-6-3Zm0 4 6 3 6-3" fill="none" stroke="#3e592f" stroke-width="1.1"/>
-    <rect x="69" y="83" width="63" height="4" rx="2" fill="#d7e8c6"/>
-    <rect x="69" y="94" width="42" height="3" rx="1.5" fill="#8ba479"/>
-    <rect x="27" y="131" width="120" height="46" rx="7" fill="#21362a"/>
-    <rect x="39" y="143" width="18" height="18" rx="4" fill="#3c5940"/>
-    <rect x="69" y="144" width="58" height="4" rx="2" fill="#7b9572"/>
-    <rect x="69" y="155" width="38" height="3" rx="1.5" fill="#526e4e"/>
-    <rect x="27" y="187" width="120" height="46" rx="7" fill="#21362a"/>
-    <rect x="39" y="199" width="18" height="18" rx="4" fill="#3c5940"/>
-    <rect x="69" y="200" width="52" height="4" rx="2" fill="#7b9572"/>
-    <rect x="69" y="211" width="41" height="3" rx="1.5" fill="#526e4e"/>
-    <rect x="172" y="55" width="390" height="193" rx="9" fill="#edf3e6"/>
-    <rect x="172" y="55" width="390" height="193" rx="9" fill="url(#paper)"/>
-    <text x="191" y="79" fill="#798a70" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="600" letter-spacing="1.6">ARCHITECTURE PREVIEW</text>
-    <rect x="198" y="103" width="338" height="115" rx="8" fill="none" stroke="#a8bd94"/>
-    <path d="M262 148H342M392 148H472" stroke="#668f50" stroke-width="1.6" marker-end="url(#arrow)"/>
-    <g fill="#fff" stroke="#b8c7aa">
-      <rect x="216" y="127" width="43" height="43" rx="9"/>
-      <rect x="346" y="127" width="43" height="43" rx="9"/>
-      <rect x="476" y="127" width="43" height="43" rx="9"/>
-    </g>
-    <g fill="none" stroke="#5c7b49" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">
-      <rect x="226" y="137" width="23" height="16" rx="2"/><path d="M237 154v5m-5 0h10"/>
-      <path d="m362 138-5 10 5 10m11-20 5 10-5 10m-5-22-2 24"/>
-      <ellipse cx="498" cy="139" rx="11" ry="4"/><path d="M487 139v16c0 6 22 6 22 0v-16m-22 8c0 6 22 6 22 0"/>
-    </g>
-    <g fill="#586d49" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600" text-anchor="middle">
-      <text x="237" y="190">BROWSER</text><text x="367" y="190">APP</text><text x="497" y="190">DATA</text>
-    </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M773 177h87m120 0h31q14 0 14-14v-40q0-14 14-14h48m-107 68h31q14 0 14 14v40q0 14 14 14h48"
+          stroke="#333957" stroke-width="9"/>
+    <path d="M773 177h87m120 0h31q14 0 14-14v-40q0-14 14-14h48m-107 68h31q14 0 14 14v40q0 14 14 14h48"
+          stroke="url(#accent)" stroke-width="2"/>
+    <path d="m852 171 8 6-8 6m227-80 8 6-8 6m0 124 8 6-8 6" stroke="#96d9ff" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(685 133)">
+    <rect width="88" height="88" rx="22" fill="url(#node)" stroke="#67649a" stroke-width="1.5"/>
+    <path d="M29 24h19l12 12v28H29zM48 24v12h12M37 46h15m-15 8h15"
+          fill="none" stroke="#bdbaff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(870 127)">
+    <rect x="-8" y="-8" width="116" height="116" rx="32" fill="#8d85ff" fill-opacity=".09" stroke="#756cf2" stroke-opacity=".35"/>
+    <rect width="100" height="100" rx="25" fill="url(#node)" stroke="url(#accent)" stroke-width="2"/>
+    <path d="m26 40 24-14 24 14-24 14zM26 50l24 14 24-14M26 60l24 14 24-14"
+          fill="none" stroke="url(#accent)" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="translate(1097 76)">
+    <rect width="66" height="66" rx="18" fill="url(#node)" stroke="#5c81aa" stroke-width="1.5"/>
+    <rect x="18" y="21" width="30" height="24" rx="4" fill="none" stroke="#9ce6ff" stroke-width="2.2"/>
+    <path d="M18 28h30m-19 8 3 3-3 3m7 0h5" fill="none" stroke="#9ce6ff" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1097 212)">
+    <rect width="66" height="66" rx="18" fill="url(#node)" stroke="#5c81aa" stroke-width="1.5"/>
+    <path d="M32 21H21v24h24V34m-12-1 13-13m-10 0h10v10"
+          fill="none" stroke="#9ce6ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g fill="#c1c8ea" font-family="ui-monospace, Menlo, monospace" font-size="14" letter-spacing="1.5" text-anchor="middle">
+    <text x="729" y="247">HTML</text>
+    <text x="920" y="253">LIBRARY</text>
+    <text x="1130" y="166">PREVIEW</text>
+    <text x="1130" y="302">OPEN</text>
   </g>
 </svg>
